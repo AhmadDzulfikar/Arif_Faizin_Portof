@@ -69,7 +69,7 @@ const iconVariants = {
 export function Footer() {
   return (
     <motion.footer
-      className="bg-[#151414] text-center py-16 px-4"
+      className="bg-[#1E2326] text-center py-16 px-4"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -84,14 +84,14 @@ export function Footer() {
       >
         {/* Brand Name */}
         <motion.h2
-          className="text-2xl md:text-3xl font-bold tracking-widest text-[#f5f1e8] mb-2 uppercase"
+          className="text-2xl md:text-3xl font-bold tracking-widest text-[#F6F4EF] mb-2 uppercase font-serif"
           variants={itemVariants}
         >
           Akhmad Shunhaji
         </motion.h2>
 
         {/* Copyright */}
-        <motion.p className="text-sm text-[#a8a8a8] mb-8" variants={itemVariants}>
+        <motion.p className="text-sm text-[#F6F4EF]/60 mb-8 font-serif" variants={itemVariants}>
           © 2025 Akhmad Shunhaji | All Right Reserved
         </motion.p>
 
@@ -105,7 +105,7 @@ export function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full border-2 border-[#4a9d6f] flex items-center justify-center text-[#4a9d6f] hover:bg-[#4a9d6f] hover:text-[#151414] transition-colors duration-300"
+                className="w-12 h-12 rounded-full border border-[#0E5A5A] flex items-center justify-center text-[#0E5A5A] hover:bg-[#0E5A5A] hover:text-[#F6F4EF] transition-colors duration-300 bg-[#F6F4EF]"
                 variants={iconVariants}
                 whileHover="hover"
                 aria-label={social.label}
@@ -118,7 +118,7 @@ export function Footer() {
 
         {/* Divider Line */}
         <motion.div
-          className="h-px bg-gradient-to-r from-transparent via-[#4a9d6f] to-transparent"
+          className="h-px bg-gradient-to-r from-transparent via-[#0E5A5A] to-transparent opacity-50"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -128,3 +128,4 @@ export function Footer() {
     </motion.footer>
   )
 }
+

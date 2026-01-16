@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 
 const EASE_OUT: [number, number, number, number] = [0.16, 1, 0.3, 1]
@@ -38,22 +38,22 @@ const itemVariants = {
     },
   }),
   hover: {
-    color: "#4a9d6f",
+    color: "var(--primary)",
     transition: { duration: 0.3 },
   },
 }
 
 const mobileMenuVariants = {
-  hidden: { 
-    opacity: 0, 
+  hidden: {
+    opacity: 0,
     height: 0,
     transition: {
       duration: 0.3,
       ease: EASE_OUT,
     }
   },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     height: "auto",
     transition: {
       duration: 0.3,
@@ -81,6 +81,16 @@ interface NavbarProps {
 export function Navbar({ currentPage }: NavbarProps) {
   const pathname = usePathname()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  // Scroll detection
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const isActive = (href: string) => {
     if (href === "/" && pathname === "/") return true
@@ -98,16 +108,22 @@ export function Navbar({ currentPage }: NavbarProps) {
 
   return (
     <motion.nav
-      className="bg-[#262727] px-4 md:px-8 py-4 md:py-6 sticky top-0 z-50 border-b border-[#3a3a3a]"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+          ? "bg-[var(--background)] shadow-md py-4"
+          : "bg-transparent py-6"
+        }`}
       variants={navVariants}
       initial="hidden"
       animate="visible"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between">
           {/* Brand */}
           <motion.div
-            className="text-lg md:text-xl font-bold tracking-widest text-[#f5f1e8] uppercase"
+            className={`font-serif text-xl md:text-2xl font-bold tracking-tight uppercase transition-colors duration-300 ${isScrolled ? "text-[var(--foreground)]" : "text-[var(--foreground)]"
+              // Note: On hero (background ivory), text is charcoal. On solid ivory, text is charcoal. 
+              // Wait, hero bg is #F6F4EF. Navbar solid is #F6F4EF. So text stays #1E2326 (charcoal).
+              }`}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -136,15 +152,14 @@ export function Navbar({ currentPage }: NavbarProps) {
               >
                 <Link
                   href={item.href}
-                  className={`text-sm tracking-wide uppercase transition-colors duration-300 ${
-                    isActive(item.href) ? "text-[#4a9d6f]" : "text-[#f5f1e8]"
-                  }`}
+                  className={`text-sm tracking-widest font-serif font-medium uppercase transition-colors duration-300 ${isActive(item.href) ? "text-[var(--primary)]" : "text-[var(--foreground)] hover:text-[var(--primary)]"
+                    }`}
                 >
                   {item.label}
                 </Link>
                 {isActive(item.href) && (
                   <motion.div
-                    className="absolute -bottom-1 left-0 h-0.5 bg-[#4a9d6f] w-full"
+                    className="absolute -bottom-1 left-0 h-0.5 bg-[var(--primary)] w-full"
                     layoutId="underline"
                     transition={{ duration: 0.3 }}
                   />
@@ -155,7 +170,7 @@ export function Navbar({ currentPage }: NavbarProps) {
 
           {/* Mobile Hamburger Button */}
           <motion.button
-            className="md:hidden text-[#f5f1e8] p-2 hover:bg-[#3a3a3a] rounded-lg transition-colors"
+            className="md:hidden text-[var(--foreground)] p-2 hover:bg-[var(--primary)]/10 rounded-lg transition-colors"
             onClick={toggleMobileMenu}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -174,13 +189,14 @@ export function Navbar({ currentPage }: NavbarProps) {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              className="md:hidden overflow-hidden"
+              className={`md:hidden overflow-hidden mt-4 rounded-xl ${isScrolled ? "bg-white/50 backdrop-blur-md" : "bg-[var(--background)] shadow-lg"
+                }`}
               variants={mobileMenuVariants}
               initial="hidden"
               animate="visible"
               exit="hidden"
             >
-              <div className="pt-4 pb-2 space-y-1">
+              <div className="pt-4 pb-4 px-4 space-y-2">
                 {navItems.map((item, i) => (
                   <motion.div
                     key={item.label}
@@ -192,11 +208,10 @@ export function Navbar({ currentPage }: NavbarProps) {
                     <Link
                       href={item.href}
                       onClick={closeMobileMenu}
-                      className={`block py-3 px-4 rounded-lg text-base tracking-wide uppercase transition-all duration-300 ${
-                        isActive(item.href)
-                          ? "text-[#4a9d6f] bg-[#4a9d6f]/10"
-                          : "text-[#f5f1e8] hover:bg-[#3a3a3a]"
-                      }`}
+                      className={`block py-3 px-4 rounded-lg text-base font-serif font-medium tracking-wide uppercase transition-all duration-300 ${isActive(item.href)
+                          ? "text-[var(--primary)] bg-[var(--primary)]/10"
+                          : "text-[var(--foreground)] hover:bg-[var(--muted)]"
+                        }`}
                     >
                       {item.label}
                     </Link>
@@ -210,3 +225,4 @@ export function Navbar({ currentPage }: NavbarProps) {
     </motion.nav>
   )
 }
+

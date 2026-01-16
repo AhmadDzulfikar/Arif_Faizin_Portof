@@ -98,7 +98,7 @@ export function BooksSection() {
 
   return (
     <motion.section
-      className="bg-[#1a1a1a] py-20 px-8"
+      className="bg-[var(--background)] py-24 px-6 md:px-12"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -106,19 +106,22 @@ export function BooksSection() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center text-[#f5f1e8] mb-16 uppercase tracking-wide"
+        <motion.div
+          className="text-center mb-16"
           variants={titleVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          Books
-        </motion.h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-[var(--foreground)] font-serif uppercase tracking-tight mb-2">
+            Books
+          </h2>
+          <div className="w-24 h-1 bg-[var(--primary)] mx-auto rounded-full opacity-80" />
+        </motion.div>
 
         {/* Books Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -134,13 +137,13 @@ export function BooksSection() {
               onMouseLeave={() => setHoveredId(null)}
             >
               {/* Book Cover */}
-              <div className="relative aspect-[3/4] rounded-lg overflow-hidden bg-gray-800">
+              <div className="relative aspect-[3/4.5] rounded-md overflow-hidden shadow-md bg-white border border-[var(--border)] transition-shadow duration-300 group-hover:shadow-xl">
                 <Image src={book.image || "/placeholder.svg"} alt={book.title} fill className="object-cover" />
 
                 {/* Hover Overlay */}
                 {hoveredId === book.id && (
                   <motion.div
-                    className="absolute inset-0 bg-black/70 backdrop-blur-sm flex flex-col items-center justify-center p-6"
+                    className="absolute inset-0 bg-[var(--primary)]/90 backdrop-blur-[2px] flex flex-col items-center justify-center p-6"
                     variants={overlayVariants}
                     initial="hidden"
                     animate="visible"
@@ -151,21 +154,14 @@ export function BooksSection() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1 }}
                     >
-                      <p className="text-[#d4d4d4] text-sm leading-relaxed">{book.description}</p>
-                      <p className="text-[#4a9d6f] text-xs font-semibold">{book.author}</p>
+                      <p className="text-white text-sm leading-relaxed font-serif">{book.description}</p>
                       <div className="flex flex-col gap-2 pt-2">
-                        <a
+                        <Link
                           href={book.url}
-                          className="text-[#4a9d6f] text-sm underline hover:text-[#5ab87f] transition-colors"
+                          className="inline-block px-4 py-2 bg-white text-[var(--primary)] text-xs font-bold uppercase tracking-wider rounded hover:bg-[var(--accent)] hover:text-white transition-colors"
                         >
-                          Book Details
-                        </a>
-                        <a
-                          href={book.url}
-                          className="text-[#4a9d6f] text-sm underline hover:text-[#5ab87f] transition-colors"
-                        >
-                          Buy
-                        </a>
+                          View Details
+                        </Link>
                       </div>
                     </motion.div>
                   </motion.div>
@@ -173,14 +169,14 @@ export function BooksSection() {
               </div>
 
               {/* Book Title */}
-              <motion.p
-                className="text-center text-[#d4d4d4] mt-4 font-semibold text-sm"
+              <motion.h3
+                className="text-center text-[var(--foreground)] mt-6 font-serif font-bold text-lg leading-tight group-hover:text-[var(--primary)] transition-colors"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
                 {book.title}
-              </motion.p>
+              </motion.h3>
             </motion.div>
           ))}
         </motion.div>
@@ -195,7 +191,7 @@ export function BooksSection() {
         >
           <Link href="/books">
             <motion.button
-              className="px-8 py-3 border-2 border-[#4a9d6f] text-[#4a9d6f] rounded-full font-semibold uppercase tracking-wide hover:bg-[#4a9d6f] hover:text-[#1a1a1a] transition-all duration-300"
+              className="px-10 py-3 bg-[var(--primary)] text-white rounded-full font-serif font-medium shadow-md hover:bg-[var(--secondary)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -207,3 +203,4 @@ export function BooksSection() {
     </motion.section>
   )
 }
+
