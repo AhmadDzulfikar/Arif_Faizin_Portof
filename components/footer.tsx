@@ -87,12 +87,12 @@ export function Footer() {
           className="text-2xl md:text-3xl font-bold tracking-widest text-[#F6F4EF] mb-2 uppercase font-serif"
           variants={itemVariants}
         >
-          Akhmad Shunhaji
+          Arif Faizin
         </motion.h2>
 
         {/* Copyright */}
         <motion.p className="text-sm text-[#F6F4EF]/60 mb-8 font-serif" variants={itemVariants}>
-          © 2025 Akhmad Shunhaji | All Right Reserved
+          © 2025 Arif Faizin | All Right Reserved
         </motion.p>
 
         {/* Social Icons */}

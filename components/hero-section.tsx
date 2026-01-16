@@ -56,8 +56,8 @@ export function HeroSection() {
                             className="text-5xl md:text-7xl font-bold font-serif text-[var(--foreground)] tracking-tight leading-tight mb-4"
                             variants={fadeInUp}
                         >
-                            AKHMAD <br />
-                            <span className="text-[var(--primary)]">SHUNHAJI</span>
+                            ARIF <br />
+                            <span className="text-[var(--primary)]">FAIZIN</span>
                         </motion.h1>
 
                         {/* Tagline */}
@@ -99,7 +99,7 @@ export function HeroSection() {
                     <div className="relative flex-shrink-0 w-full md:w-1/3 aspect-[3/4] md:aspect-[4/5] rounded-lg overflow-hidden shadow-lg group">
                         <Image
                             src="/author-portrait.webp"
-                            alt="Akhmad Shunhaji Portrait"
+                            alt="Arif Faizin Portrait"
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
@@ -109,7 +109,7 @@ export function HeroSection() {
                     {/* About Content */}
                     <div className="flex-1 space-y-6">
                         <h3 className="text-2xl md:text-3xl font-serif font-bold text-[var(--primary)]">
-                            Mengenal Akhmad Shunhaji
+                            Mengenal Arif Faizin
                         </h3>
 
                         <div className="space-y-4 text-[var(--foreground)] font-serif text-lg leading-relaxed">

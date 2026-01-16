@@ -11,7 +11,7 @@ const books = [
   {
     id: 1,
     title: "Aku, Kamu, DIA",
-    author: "Akhmad Shunhaji",
+    author: "Arif Faizin",
     description: "Ajakan pelan-pelan untuk berhenti sebentar dari ramainya hari, lalu bertanya dengan jujur: sebenarnya, hidupku sedang ke mana?",
     image: "/aku_kamu_dan_dia.webp",
     url: "/books/aku-kamu-dan-dia",
@@ -19,7 +19,7 @@ const books = [
   {
     id: 2,
     title: "Manajemen Cinta dalam Pendidikan",
-    author: "Akhmad Shunhaji",
+    author: "Arif Faizin",
     description: "Napas baru untuk ruang kelas—mengingatkan bahwa pendidikan yang hebat selalu punya unsur yang sering hilang: rasa manusia.",
     image: "/manajemen_cinta_dalam_pendidikan.webp",
     url: "/books/manajemen-cinta-dalam-pendidikan",
@@ -27,7 +27,7 @@ const books = [
   {
     id: 3,
     title: "Manajemen Cinta sebagai Hidden Curriculum di Madrasah",
-    author: "Akhmad Shunhaji",
+    author: "Arif Faizin",
     description: "Membuka tirai yang selama ini diam-diam menentukan 'warna' sebuah madrasah.",
     image: "/manajemen_cinta_sebagai_hidden.webp",
     url: "/books/manajemen-cinta-sebagai-hidden-curriculum",
@@ -35,7 +35,7 @@ const books = [
   {
     id: 4,
     title: "Konsep Dasar Manajemen Cinta dalam Pendidikan",
-    author: "Akhmad Shunhaji",
+    author: "Arif Faizin",
     description: "Pegangan ringkas yang merapikan cinta jadi konsep yang bisa dipahami cepat.",
     image: "/konsep_dasar_manajemen_cinta.webp",
     url: "/books/konsep-dasar-manajemen-cinta",

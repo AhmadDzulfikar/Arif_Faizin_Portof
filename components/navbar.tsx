@@ -109,8 +109,8 @@ export function Navbar({ currentPage }: NavbarProps) {
   return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-[var(--background)] shadow-md py-4"
-          : "bg-transparent py-6"
+        ? "bg-[var(--background)] shadow-md py-4"
+        : "bg-transparent py-6"
         }`}
       variants={navVariants}
       initial="hidden"
@@ -129,7 +129,7 @@ export function Navbar({ currentPage }: NavbarProps) {
             transition={{ duration: 0.6 }}
           >
             <Link href="/" onClick={closeMobileMenu}>
-              Akhmad Shunhaji
+              Arif Faizin
             </Link>
           </motion.div>
 
@@ -209,8 +209,8 @@ export function Navbar({ currentPage }: NavbarProps) {
                       href={item.href}
                       onClick={closeMobileMenu}
                       className={`block py-3 px-4 rounded-lg text-base font-serif font-medium tracking-wide uppercase transition-all duration-300 ${isActive(item.href)
-                          ? "text-[var(--primary)] bg-[var(--primary)]/10"
-                          : "text-[var(--foreground)] hover:bg-[var(--muted)]"
+                        ? "text-[var(--primary)] bg-[var(--primary)]/10"
+                        : "text-[var(--foreground)] hover:bg-[var(--muted)]"
                         }`}
                     >
                       {item.label}
