@@ -101,9 +101,9 @@ export function AboutHero() {
 // --- SECTION C: Focus & Values ---
 export function FocusValues() {
     const values = [
-        { title: "Transformasi Pendidikan", text: "Mendorong kurikulum pesantren yang adaptif namun tetap berakar pada tradisi keilmuan Islam.", icon: BookOpen },
-        { title: "Ekonomi Syariah", text: "Penguatan ekonomi umat berbasis kemaslahatan, keadilan, dan keberlanjutan.", icon: Users },
-        { title: "Khidmah Sosial", text: "Mengabdi untuk umat melalui organisasi dan pelayanan publik yang inklusif dan solutif.", icon: Award },
+        { title: "Pendidikan & Pesantren", text: "Mengintegrasikan tradisi keilmuan pesantren dengan manajemen pendidikan modern.", icon: GraduationCap },
+        { title: "Khidmah Organisasi", text: "Dedikasi panjang mengabdi di NU dan organisasi keagamaan untuk kemaslahatan umat.", icon: Users },
+        { title: "Literasi Akademik", text: "Aktif membangun tradisi intelektual melalui penulisan buku dan pengelolaan jurnal ilmiah.", icon: BookOpen },
     ]
 
     return (
@@ -140,17 +140,21 @@ export function FocusValues() {
 // --- SECTION D: Roles (Tabs) ---
 const rolesData = {
     Academic: [
-        { title: "Dosen Pascasarjana", inst: "UIN SATU Tulungagung", desc: "Mengampu mata kuliah Ekonomi Syariah & Manajemen Pendidikan." },
-        { title: "Sekretaris Jurusan PGMI", inst: "2017–2022", desc: "Pengelolaan akademik dan pengembangan kurikulum jurusan." },
-        { title: "Alumni Doktoral", inst: "Universitas Negeri Jakarta", desc: "Konsentrasi Manajemen Pendidikan." },
+        { title: "Dosen Pascasarjana S2 Ekonomi Syariah", inst: "UIN SATU Tulungagung (2019-Sekarang)", desc: "Mengampu mata kuliah dan membimbing mahasiswa tingkat lanjut." },
+        { title: "Dosen FTIK", inst: "UIN SATU Tulungagung (2015-Sekarang)", desc: "Pengajar aktif di Fakultas Tarbiyah dan Ilmu Keguruan." },
+        { title: "Sekjur PGMI", inst: "FTIK UIN Satu Tulungagung (2017-2022)", desc: "Mengelola administrasi dan pengembangan akademik jurusan." },
+        { title: "Editor In Chief", inst: "Jurnal Pendidikan Ta'allum (2015-Sekarang)", desc: "Memimpin redaksi jurnal ilmiah terakreditasi." },
     ],
     Organization: [
-        { title: "Wakil Ketua Tanfidziah", inst: "PCNU Kab. Blitar", desc: "Menggerakkan program jam'iyah untuk kemaslahatan warga Nahdliyin." },
-        { title: "Pengurus Aktif", inst: "MUI, DMI, IPHI", desc: "Berkontribusi dalam dakwah, kemakmuran masjid, dan haji." },
+        { title: "Wakil Ketua Tanfidziah", inst: "PCNU Kab. Blitar (2012-2023)", desc: "Mengawal kebijakan organisasi di tingkat cabang." },
+        { title: "Ketua Badan Aset NU/BPPAB", inst: "PCNU Kab. Blitar (2013-2023)", desc: "Mengelola dan menginventarisasi aset organisasi." },
+        { title: "BPP UNU Blitar", inst: "Universitas Nahdlatul Ulama Blitar (2018-2022)", desc: "Badan Pelaksana Penyelenggara perguruan tinggi NU." },
+        { title: "Ketua Lakpesdam", inst: "Kab. Blitar (2007-2012)", desc: "Lembaga Kajian dan Pengembangan Sumber Daya Manusia." },
     ],
     Community: [
-        { title: "Editor in Chief", inst: "Jurnal Pendidikan Ta'allum", desc: "Mengawal publikasi ilmiah berkualitas di bidang pendidikan." },
-        { title: "Penulis Buku", inst: "Manajemen Pesantren", desc: "Karya tulis yang menjadi rujukan pengelolaan pesantren modern." },
+        { title: "Pengurus Aktif", inst: "MUI, DMI, IPHI", desc: "Berkhidmat di Majelis Ulama, Dewan Masjid, dan Ikatan Persaudaraan Haji." },
+        { title: "Penghulu di KUA", inst: "Kementerian Agama (2005-2007)", desc: "Melayani masyarakat dalam pencatatan pernikahan." },
+        { title: "Staf URAIS", inst: "Kemenag (2007-2009)", desc: "Uurusan Agama Islam dan Pembinaan Syariah." },
     ]
 }
 
@@ -209,10 +213,15 @@ export function RolesTabs() {
 
 // --- SECTION E: Timeline ---
 const milestones = [
-    { year: "2013", title: "Pengabdian Kemenag", desc: "Memulai karir di Kementerian Agama, birokrasi, dan pelayanan publik." },
-    { year: "2017", title: "Sekretaris Jurusan PGMI", desc: "Menjabat hingga 2022, fokus pada pengembangan akademik." },
-    { year: "2022", title: "Doktoral UNJ", desc: "Menyelesaikan studi S3 Manajemen Pendidikan di Universitas Negeri Jakarta." },
-    { year: "2024", title: "Wakil Ketua PCNU", desc: "Amanah sebagai Wakil Ketua Tanfidziah PCNU Kabupaten Blitar periode berjalan." },
+    { year: "2001", title: "Lulus S1 IAIN Sunan Kalijaga", desc: "Menyelesaikan pendidikan sarjana di Yogyakarta." },
+    { year: "2005", title: "Penghulu di KUA", desc: "Memulai pengabdian di Kementerian Agama (hingga 2007)." },
+    { year: "2007", title: "Lulus S2 UNISLA", desc: "Meraih gelar Magister Agama." },
+    { year: "2007", title: "Ketua Lakpesdam Kab. Blitar", desc: "Memimpin lembaga kajian NU (hingga 2012)." },
+    { year: "2012", title: "Wakil Ketua Tanfidziah PCNU", desc: "Amanah kepemimpinan di PCNU Kab. Blitar." },
+    { year: "2013", title: "Doktoral (S3) UNJ", desc: "Lulus program doktoral Manajemen Pendidikan Universitas Negeri Jakarta." },
+    { year: "2015", title: "Dosen FTIK UIN SATU", desc: "Memulai karir dosen di UIN Sayyid Ali Rahmatullah Tulungagung." },
+    { year: "2017", title: "Sekjur PGMI", desc: "Menjabat Sekretaris Jurusan PGMI FTIK UIN Satu (hingga 2022)." },
+    { year: "2019", title: "Dosen Pascasarjana S2", desc: "Mengajar di program Pascasarjana Ekonomi Syariah." },
 ]
 
 export function CareerTimeline() {
