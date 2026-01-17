@@ -111,12 +111,12 @@ export default function BookDetailPage() {
 
   if (!book) {
     return (
-      <div className="min-h-screen bg-[#1a1a1a]">
+      <div className="min-h-screen bg-[#F6F4EF] font-serif">
         <Navbar />
         <div className="flex items-center justify-center min-h-[80vh]">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-[#f5f1e8] mb-4">Book Not Found</h1>
-            <Link href="/books" className="text-[#4a9d6f] hover:text-[#5ab87f]">
+            <h1 className="text-4xl font-bold text-[#1E2326] mb-4">Book Not Found</h1>
+            <Link href="/books" className="text-[#0E5A5A] hover:underline">
               Back to Books
             </Link>
           </div>
@@ -127,10 +127,22 @@ export default function BookDetailPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#1a1a1a]">
-      <Navbar />
+    <div className="min-h-screen bg-[#F6F4EF] font-serif relative">
+      <Navbar currentPage="BOOKS" />
 
-      <main className="pt-20 pb-20">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="diagonal-lines-sm" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M-1,1 l2,-2 M0,20 l20,-20 M19,21 l2,-2" stroke="#0E5A5A" strokeWidth="0.5" opacity="0.1" />
+            </pattern>
+          </defs>
+          <rect x="0" y="0" width="100%" height="100%" fill="url(#diagonal-lines-sm)" />
+        </svg>
+      </div>
+
+      <main className="pt-32 pb-20 relative z-10">
         <div className="max-w-6xl mx-auto px-8">
           {/* Back Button */}
           <motion.div
@@ -141,7 +153,7 @@ export default function BookDetailPage() {
           >
             <Link
               href="/books"
-              className="inline-flex items-center gap-2 text-[#4a9d6f] hover:text-[#5ab87f] transition-colors"
+              className="inline-flex items-center gap-2 text-[#0E5A5A] hover:underline transition-all"
             >
               <span>←</span>
               <span>Back to Books</span>
@@ -157,8 +169,10 @@ export default function BookDetailPage() {
           >
             {/* Left: Book Cover */}
             <motion.div className="flex justify-center" variants={imageVariants}>
-              <div className="relative w-full max-w-sm aspect-[3/4] rounded-lg overflow-hidden shadow-2xl">
-                <Image src={book.image || "/placeholder.svg"} alt={book.title} fill className="object-cover" priority />
+              <div className="bg-white p-4 rounded-lg shadow-md border border-[#1E2326]/5 w-full max-w-sm">
+                <div className="relative w-full aspect-[3/4] rounded overflow-hidden">
+                  <Image src={book.image || "/placeholder.svg"} alt={book.title} fill className="object-cover" priority />
+                </div>
               </div>
             </motion.div>
 
@@ -166,13 +180,13 @@ export default function BookDetailPage() {
             <motion.div className="space-y-8" variants={contentVariants}>
               {/* Title */}
               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-                <h1 className="text-4xl md:text-5xl font-bold text-[#f5f1e8] mb-2 leading-tight">{book.title}</h1>
-                <p className="text-[#4a9d6f] text-lg font-semibold">{book.author}</p>
+                <h1 className="text-4xl md:text-5xl font-bold text-[#1E2326] mb-2 leading-tight">{book.title}</h1>
+                <p className="text-[#1F7A5C] text-lg font-semibold">{book.author}</p>
               </motion.div>
 
               {/* Divider */}
               <motion.div
-                className="h-1 w-16 bg-gradient-to-r from-[#4a9d6f] to-transparent"
+                className="h-1 w-16 bg-gradient-to-r from-[#0E5A5A] to-transparent"
                 initial={{ width: 0 }}
                 animate={{ width: 64 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -185,7 +199,7 @@ export default function BookDetailPage() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                <p className="text-[#d4d4d4] text-lg leading-relaxed whitespace-pre-line">{book.fullDescription}</p>
+                <p className="text-[#1E2326] text-lg leading-relaxed whitespace-pre-line">{book.fullDescription}</p>
               </motion.div>
 
               {/* Buy Button */}
@@ -194,7 +208,7 @@ export default function BookDetailPage() {
                   href={buyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-8 py-4 bg-[#4a9d6f] text-[#1a1a1a] rounded-full font-bold text-lg hover:bg-[#5ab87f] transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="inline-block px-8 py-4 bg-[#0E5A5A] text-white rounded-full font-bold text-lg hover:bg-[#1F7A5C] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                 >
                   Buy this book
                 </a>
@@ -202,15 +216,15 @@ export default function BookDetailPage() {
 
               {/* Related Books Suggestion */}
               <motion.div
-                className="pt-8 border-t border-[#3a3a3a]"
+                className="pt-8 border-t border-[#1E2326]/10"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
               >
-                <p className="text-[#d4d4d4] text-sm mb-4">Interested in more books?</p>
+                <p className="text-[#1E2326] text-sm mb-4">Interested in more books?</p>
                 <Link
                   href="/books"
-                  className="inline-flex items-center gap-2 text-[#4a9d6f] hover:text-[#5ab87f] transition-colors font-semibold"
+                  className="inline-flex items-center gap-2 text-[#0E5A5A] hover:text-[#1F7A5C] transition-colors font-semibold"
                 >
                   <span>Explore all books</span>
                   <span>→</span>
