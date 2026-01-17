@@ -6,17 +6,17 @@ import { BookOpen, Users, GraduationCap } from "lucide-react"
 const highlights = [
     {
         title: "Academic Leadership",
-        text: "Ketua STAI Fatahillah Serpong & Kaprodi Magister MPI Universitas PTIQ Jakarta.",
+        text: "Dosen Pascasarjana UIN SATU Tulungagung & Sekretaris Jurusan PGMI (2017–2022).",
         icon: GraduationCap
     },
     {
         title: "Community Service",
-        text: "Ketua APTIKIS Jakarta–Banten (2024-2027) & Rois Syuriah MWC NU Kramatjati.",
+        text: "Wakil Ketua Tanfidziah PCNU Kab. Blitar & Pengurus aktif di MUI, DMI, serta IPHI.",
         icon: Users
     },
     {
         title: "Prolific Author",
-        text: "Penulis buku manajemen pendidikan transformatif & spiritualitas.",
+        text: "Penulis buku manajemen pesantren & Editor in Chief Jurnal Pendidikan Ta'allum.",
         icon: BookOpen
     }
 ]

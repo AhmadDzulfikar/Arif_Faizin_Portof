@@ -65,8 +65,8 @@ export function HeroSection() {
                             className="text-lg md:text-2xl font-serif text-[var(--muted-foreground)] mb-8 max-w-2xl leading-relaxed"
                             variants={fadeInUp}
                         >
-                            Pendidik, Penulis, & Penggerak Sosial. <br className="hidden md:block" />
-                            Ikhtiar menghadirkan pendidikan yang lebih manusiawi.
+                            Akademisi, Penulis, & Khadimul Ummah. <br className="hidden md:block" />
+                            Berkhidmat merawat tradisi keilmuan pesantren dan memajukan pendidikan Islam.
                         </motion.p>
 
                         {/* Buttons */}
@@ -98,7 +98,7 @@ export function HeroSection() {
                     {/* Portrait */}
                     <div className="relative flex-shrink-0 w-full md:w-1/3 aspect-[3/4] md:aspect-[4/5] rounded-lg overflow-hidden shadow-lg group">
                         <Image
-                            src="/author-portrait.webp"
+                            src="/author-portrait.png"
                             alt="Arif Faizin Portrait"
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -114,10 +114,10 @@ export function HeroSection() {
 
                         <div className="space-y-4 text-[var(--foreground)] font-serif text-lg leading-relaxed">
                             <p>
-                                Ketua Program Studi Magister Manajemen Pendidikan Islam (MPI) Universitas PTIQ Jakarta dan Ketua STAI Fatahillah Serpong, Banten. Fokus saya adalah memastikan pendidikan berjalan dengan ritme yang sehat: kurikulumnya relevan, layanan akademiknya rapi, dan mutu pembelajarannya terus bergerak naik.
+                                Dosen Pascasarjana Ekonomi Syariah di UIN SATU Tulungagung. Berpengalaman sebagai Sekretaris Jurusan PGMI dan lulusan Doktoral Universitas Negeri Jakarta. Saya berdedikasi mengembangkan keilmuan ekonomi syariah serta manajemen pendidikan pesantren yang transformatif dan relevan.
                             </p>
                             <p>
-                                Dipercaya sebagai Ketua APTIKIS Jakarta–Banten (2024-2027) dan Rois Syuriah MWC NU Kramatjati. Semua amanah ini bertemu di satu titik: ikhtiar agar pendidikan dan pelayanan publik berjalan lebih manusiawi.
+                                Aktif berkhidmat sebagai Wakil Ketua Tanfidziah PCNU Kabupaten Blitar. Mengintegrasikan nilai-nilai pesantren dalam pelayanan publik melalui pengalaman panjang di Kemenag dan organisasi keagamaan demi kemaslahatan umat.
                             </p>
                         </div>
 

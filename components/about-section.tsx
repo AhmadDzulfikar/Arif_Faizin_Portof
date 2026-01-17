@@ -59,7 +59,7 @@ export function AboutSection() {
         {/* Image */}
         <motion.div className="flex justify-center" variants={imageVariants} whileHover="hover">
           <div className="relative w-full max-w-sm aspect-square rounded-lg overflow-hidden">
-            <Image src="/author-portrait.webp" alt="Akhmad Shunhaji" fill className="object-cover" />
+            <Image src="/author-portrait.png" alt="Akhmad Shunhaji" fill className="object-cover" />
           </div>
         </motion.div>
 
@@ -70,7 +70,7 @@ export function AboutSection() {
           </motion.h2>
 
           <motion.p className="text-[#d4d4d4] leading-relaxed text-lg" variants={itemVariants}>
-            Ketua Program Studi Magister Manajemen Pendidikan Islam (MPI) Universitas PTIQ Jakarta dan Ketua STAI Fatahillah Serpong, Banten. Fokus saya adalah memastikan pendidikan berjalan dengan ritme yang sehat: kurikulumnya relevan, layanan akademiknya rapi, dan mutu pembelajarannya terus bergerak naik.
+            Dosen Pascasarjana Ekonomi Syariah di UIN SATU Tulungagung. Berpengalaman sebagai Sekretaris Jurusan PGMI dan lulusan Doktoral Universitas Negeri Jakarta. Saya berdedikasi mengembangkan keilmuan ekonomi syariah serta manajemen pendidikan pesantren yang transformatif dan relevan.
           </motion.p>
 
           <motion.p className="text-[#d4d4d4] leading-relaxed text-lg" variants={itemVariants}>
