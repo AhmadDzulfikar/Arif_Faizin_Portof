@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 
-const EASE_OUT = [0.16, 1, 0.3, 1]
+const EASE_OUT: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 // Animation variants
 const fadeInUp = {
