@@ -9,17 +9,12 @@ const EASE_IN_OUT: [number, number, number, number] = [0.37, 0, 0.63, 1]
 const socialLinks = [
   {
     icon: Facebook,
-    href: "https://www.facebook.com/shunhaji_09/",
+    href: "/#",
     label: "Facebook",
   },
   {
-    icon: Youtube,
-    href: "https://www.youtube.com/@AkhmadShunhaji",
-    label: "YouTube",
-  },
-  {
     icon: Instagram,
-    href: "https://www.instagram.com/shunhaji_09/",
+    href: "/#",
     label: "Instagram",
   },
 ]
