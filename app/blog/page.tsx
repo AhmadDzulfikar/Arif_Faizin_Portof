@@ -169,14 +169,22 @@ export default function BlogPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: idx * 0.05, ease: EASE_OUT }}
-                    className={`group cursor-pointer flex flex-col gap-4 ${isFeatured ? 'lg:col-span-2' : ''}`}
+                    className={`group ${isFeatured ? 'lg:col-span-2' : ''}`}
                   >
-                    <Link href={`/blog/${blog.slug}`} className={`block h-full ${isFeatured ? 'flex flex-col md:flex-row gap-6 md:gap-8' : ''}`}>
+                    <Link
+                      href={`/blog/${blog.slug}`}
+                      className={`
+                        block h-full bg-card border border-border/60 rounded-xl p-5 md:p-6
+                        transition-all duration-300 hover:-translate-y-1 hover:shadow-lg
+                        focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2
+                        ${isFeatured ? 'flex flex-col md:flex-row gap-6 md:gap-8' : 'flex flex-col gap-5'}
+                      `}
+                    >
 
                       {/* Image Card */}
                       <div className={`
-                        relative overflow-hidden rounded-xl bg-muted shadow-sm border border-border/50 transition-all duration-500 group-hover:shadow-md group-hover:-translate-y-1
-                        ${isFeatured ? 'w-full md:w-1/2 min-h-[300px] md:min-h-full' : 'w-full aspect-[16/10]'}
+                        relative overflow-hidden rounded-lg bg-muted shadow-sm
+                        ${isFeatured ? 'w-full md:w-1/2 aspect-[16/10] md:h-auto' : 'w-full aspect-[16/10]'}
                       `}>
                         <motion.img
                           src={blog.image}
@@ -184,13 +192,13 @@ export default function BlogPage() {
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         {/* Soft overlay on hover */}
-                        <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-500" />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
                       </div>
 
                       {/* Content */}
-                      <div className={`flex flex-col justify-center ${isFeatured ? 'w-full md:w-1/2 pt-4 md:pt-0' : 'pt-2'}`}>
+                      <div className={`flex flex-col ${isFeatured ? 'w-full md:w-1/2 justify-center' : 'flex-1'}`}>
 
-                        <div className="flex items-center gap-3 text-xs md:text-sm text-muted-foreground mb-3 font-medium uppercase tracking-wider">
+                        <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3 font-medium uppercase tracking-wider">
                           <span>
                             {new Date(blog.date).toLocaleDateString("en-US", {
                               year: "numeric",
@@ -198,20 +206,19 @@ export default function BlogPage() {
                               day: "numeric",
                             })}
                           </span>
-                          {/* Optional Category Tag if data existed */}
-                          <span className="w-1 h-1 bg-border rounded-full" />
-                          <span>Blog</span>
+                          <span className="w-1 h-1 bg-primary/30 rounded-full" />
+                          <span className="text-primary/80">Blog</span>
                         </div>
 
                         <h2 className={`font-bold text-foreground font-serif leading-tight group-hover:text-primary transition-colors duration-300 ${isFeatured ? 'text-3xl md:text-4xl mb-4' : 'text-xl md:text-2xl mb-3'}`}>
                           {blog.title}
                         </h2>
 
-                        <p className={`text-muted-foreground leading-relaxed font-serif ${isFeatured ? 'text-lg line-clamp-4 mb-6' : 'text-base line-clamp-3 mb-4'}`}>
+                        <p className={`text-muted-foreground leading-relaxed font-serif ${isFeatured ? 'text-lg line-clamp-4 mb-6' : 'text-base line-clamp-3 mb-5'}`}>
                           {blog.excerpt}
                         </p>
 
-                        <div className="mt-auto flex items-center gap-2 text-primary font-semibold text-sm group-hover:underline decoration-1 underline-offset-4">
+                        <div className="mt-auto pt-2 flex items-center gap-2 text-primary font-semibold text-sm group-hover:underline decoration-1 underline-offset-4">
                           Read Story <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                         </div>
                       </div>
@@ -247,8 +254,8 @@ export default function BlogPage() {
                   onClick={() => setCurrentPage(page)}
                   disabled={loading}
                   className={`w-10 h-10 rounded-full font-medium font-serif flex items-center justify-center transition-all duration-300 ${currentPage === page
-                      ? "bg-primary text-primary-foreground shadow-md"
-                      : "text-muted-foreground hover:bg-muted"
+                    ? "bg-primary text-primary-foreground shadow-md"
+                    : "text-muted-foreground hover:bg-muted"
                     }`}
                 >
                   {page}
