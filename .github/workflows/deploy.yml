@@ -6,8 +6,8 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository_owner }}/akhmad_shunhaji
-  NEXT_PUBLIC_SANITY_PROJECT_ID: zm1ywn7o
+  IMAGE_NAME: ${{ github.repository_owner }}/arif_faizin_portof
+  NEXT_PUBLIC_SANITY_PROJECT_ID: 3eih3kd0
   NEXT_PUBLIC_SANITY_DATASET: production
 
 jobs:
